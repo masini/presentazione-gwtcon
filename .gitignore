@@ -1,0 +1,7 @@
+# Created by .gitignore support plugin (hsz.mobi)
+
+.idea
+dist
+presentazione-gwtcon.iml
+node_modules
+bower_components

@@ -1,0 +1,159 @@
+<section>
+    <h2>Starting from scratch</h2>
+</section>
+
+
+<section>
+    <h3>Scaffold a new GWT Maven Project</h3>
+    <pre>
+<code class="bash">
+        mvn archetype:generate \
+            -DarchetypeGroupId=org.codehaus.mojo \
+            -DarchetypeArtifactId=gwt-maven-plugin \
+            -DarchetypeVersion=2.7.0-rc1
+
+</code>
+    </pre>
+</section>
+<section>
+    <pre>
+<code class="bash">
+        mvn install
+        mvn gwt:run
+</code>
+    </pre>
+
+    <p class="fragment">Test that it works</p>
+
+    <a class="fragment">http://127.0.0.1:8888/index.html</a>
+
+</section>
+<section>
+    <p>Ok, now deletes everything</p>
+
+    <h2 class="fragment">It's not Modern !!</h2>
+</section>
+<section>
+    <h3>Scaffold an AngularJS project, just inside our Maven project</h3>
+    <pre>
+    <code class="bash">
+        cd src/main
+
+        mkdir yo && cd $_
+
+        yo angular
+
+        (sudo) npm install
+    </code>
+    </pre>
+</section>
+<section>
+    <p>Modify the generated Gruntfile.js this way:</p>
+    <pre>
+    <code class="coffescript">
+        // Configurable paths for the application
+        var appConfig = {
+          app: require('./bower.json').appPath || 'app',
+          dist: '../webapp'
+        };
+        ...
+        ...
+        // Copies remaining files to places other tasks can use
+        copy: {
+          dist: {
+            files: [{
+        ...
+        ...
+                'WEB-INF/*'
+
+        ...
+        ...
+          grunt.registerTask('build', [
+        ...
+        ...
+            'copy:dist',
+            //'cdnify',
+            'cssmin',
+        ...
+        ...
+          ]);
+
+    </code>
+    </pre>
+</section>
+<section>
+    <p>Check that it works just launching the interal web server</p>
+    <pre>
+    <code>
+        grunt serve --force
+    </code>
+    </pre>
+
+    <img width="320" height="299" src="images/grunt_serve.png" alt="grunt serve">
+</section>
+<section>
+    <p>Create a WEB-INF/web.xml in yo/app</p>
+    <pre>
+    <code language="xml"><web-app xmlns="http://java.sun.com/xml/ns/javaee"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+                 version="3.0">
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.eclipse.jetty.servlet.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>cacheControl</param-name>
+            <param-value>no-store,no-cache,must-revalidate</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
+    </code>
+    </pre>
+    <p class="fragment">This will disable caching during development</p>
+</section>
+<section>
+    <p>Configure the maven-gwt-plugin to work directly from the webapp folder...</p>
+    <pre>
+    <code class="xml">
+        <properties>
+            ...
+            <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
+            ...
+        </properties>
+        ...
+        <configuration>
+            <runTarget>index.html</runTarget>
+            <hostedWebapp>${webappDirectory}</hostedWebapp>
+            <i18nMessagesBundle>net.lucamasini.gwtday.client.Messages</i18nMessagesBundle>
+            <gen>src/main/gen</gen>
+            <jsInteropMode>JS</jsInteropMode>
+            <modules>
+                <module>net.lucamasini.gwtcon.GWTCon</module>
+            </modules>
+        </configuration>
+    </code>
+    </pre>
+</section>
+<section>
+    <p>This way it will be able to hot reload resources while we develop</p>
+    <p class="fragment">Running again...</p>
+        <pre class="fragment">
+<code class="bash">
+    mvn gwt:run
+
+
+</code>
+    </pre>
+
+    <p class="fragment">We will se the site served from the internal Jetty</p>
+
+    <img class="fragment" width="320" height="299" src="images/internal_jetty.png" alt="mvn gwt:run">
+
+</section>

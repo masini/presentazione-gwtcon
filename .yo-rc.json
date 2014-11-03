@@ -1,0 +1,10 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Java and SuperDevMode for Modern Web Development",
+    "packageVersion": "0.0.1",
+    "useSass": false,
+    "deployToGithubPages": true,
+    "githubUsername": "masini",
+    "githubRepository": "presentazione-gwtcon"
+  }
+}

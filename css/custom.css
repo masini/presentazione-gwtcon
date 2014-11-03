@@ -1,0 +1,14 @@
+.reveal .inverse {
+    background: #00779b;
+    border-radius: 4px;
+    padding: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.reveal .bluefg {
+    color: #00779b;
+}
+.reveal .twokeyfactorscolor {
+    color: #1b91ff;
+}

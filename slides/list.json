@@ -1,0 +1,73 @@
+[
+    {
+        "filename": "index.html",
+        "attr": {
+            "data-transition": "zoom"
+        }
+    },
+    {
+        "filename": "agenda.html",
+        "attr": {
+            "data-transition": "slide",
+            "data-background-transition": "zoom",
+            "data-background": "images/super_mario.jpeg"
+        }
+    },
+    {
+        "filename": "what-is-modern-web-development.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-color": "#5aadbb",
+            "data-background": "images/yeoman.png"
+        }
+    },
+    {
+        "filename": "but-what-about-gwt-until-yesterday.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-transition": "slide",
+            "data-background": "images/bambino_in_prigione.jpg"
+        }
+    },
+    {
+        "filename": "two-key-factors-that-make-gwt-modern.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-transition": "slide",
+            "data-background": "images/NoAppStore.jpg"
+        }
+    },
+    {
+        "filename": "starting-from-scratch.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-transition": "slide",
+            "data-background": "images/perspective1.jpg"
+        }
+    },
+    {
+        "filename": "javascript-or-closure-for-your-angular-controller.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-transition": "slide",
+            "data-background": "images/perspective2.jpg"
+        }
+    },
+    {
+        "filename": "modern-ide-for-modern-developers.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-color": "#5d71b8",
+            "data-background-transition": "slide"
+        }
+    },
+
+    {
+        "filename": "being-maven-free-you-from-every-birdcage.html",
+        "attr": {
+            "data-transition": "zoom",
+            "data-background-transition": "slide",
+            "data-background": "images/bower-logo.png"
+        }
+    }
+]

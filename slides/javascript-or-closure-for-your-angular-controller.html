@@ -1,0 +1,93 @@
+<section>
+    <h2>JavaScript or Closure<br/>for your Angular controller ?</h2>
+</section>
+<section>
+    <h2>Java !!!</h2>
+</section>
+
+<section>
+    <pre>
+    <code>
+        &lt;body ng-app="yoApp"&gt;
+        ...
+    </code>
+    </pre>
+    <pre>
+    <code>
+        &lt;body&gt;
+        ...
+    </code>
+    </pre>
+    <p>and remove app.js from the scripts folder</p>
+</section>
+
+<section>
+    <p>Bootstrapping in Java</p>
+    <pre>
+    <code class="java">
+        public class GWTCon implements EntryPoint {
+
+          private native Angular angular() /*-{
+              return $wnd.angular;
+          }-*/;
+
+          @JsType
+          public interface Angular {
+            void boostrap(Document doc, String...modules);
+          }
+
+          @Override
+          public void onModuleLoad() {
+
+            angular().boostrap(Document.get(), "yoApp");
+          }
+        }
+
+    </code>
+    </pre>
+</section>
+<section>
+    <p>Routing definition, from JavaScript....</p>
+    <pre>
+    <code class="javascript">
+angular
+  .module('yoApp', [
+    'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch' ])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+    </code>
+    </pre>
+</section>
+<section>
+    <p>...to Java !</p>
+    <pre>
+    <code class="java">
+Module module = angular.module("yoApp",
+    "ngAnimate", "ngCookies", "ngResource", "ngRoute",
+    "ngSanitize", "ngTouch").
+    config(new Object[]{"$routeProvider", i2f(new FunctionCall&lt;RouteProvider&gt;() {
+        @Override
+        public void function(RouteProvider routeProvider) {
+            routeProvider.
+                    when("/about", route().templateUrl("views/about.html").
+                        controller("AboutCtrl")).
+                    when("/", route().templateUrl("views/main.html").
+                        controller("MainCtrl")).
+                    otherwise("/");
+        }
+})});
+    </code>
+    </pre>
+</section>

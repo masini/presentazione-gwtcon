@@ -1,0 +1,7 @@
+{
+  "name": "java-and-superdevmode-for-modern-web-development",
+  "version": "0.0.1",
+  "dependencies": {
+    "reveal.js": "~2.6.1"
+  }
+}
