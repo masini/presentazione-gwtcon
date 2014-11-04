@@ -2,6 +2,7 @@
     {
         "filename": "index.html",
         "attr": {
+            "data-background-color": "rgb(237,82,63)",
             "data-transition": "zoom"
         }
     },
@@ -61,7 +62,6 @@
             "data-background-transition": "slide"
         }
     },
-
     {
         "filename": "being-maven-free-you-from-every-birdcage.html",
         "attr": {
@@ -69,5 +69,6 @@
             "data-background-transition": "slide",
             "data-background": "images/bower-logo.png"
         }
-    }
+    },
+    "riferimenti.html"
 ]

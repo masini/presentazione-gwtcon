@@ -6,6 +6,7 @@
 </section>
 
 <section>
+    <p>Modify "app/index.html", remove the ng-app to avoid bootstrapping before GWT</p>
     <pre>
     <code>
         &lt;body ng-app="yoApp"&gt;
@@ -18,7 +19,8 @@
         ...
     </code>
     </pre>
-    <p>and remove app.js from the scripts folder</p>
+    <p>and remove "app/scripts/app.js"</p>
+    <h3 class="fragment">You don't need JavaScript, anymore</h3>
 </section>
 
 <section>
@@ -49,8 +51,7 @@
 <section>
     <p>Routing definition, from JavaScript....</p>
     <pre>
-    <code class="javascript">
-angular
+    <code class="javascript">angular
   .module('yoApp', [
     'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch' ])
   .config(function ($routeProvider) {
@@ -87,7 +88,45 @@ Module module = angular.module("yoApp",
                         controller("MainCtrl")).
                     otherwise("/");
         }
+    })
+});
+    </code>
+    </pre>
+</section>
+<section>
+    <p>A service at your disposal for injection</p>
+    <pre>
+    <code class="java">
+angular.
+  module("restServices", "ngResource").
+    factory("RestService", new Object[]{"$resource", i2f(new Function() {
+       @Override
+          public Resource function(ResourceFactory param) {
+            return param.call(param, "data/:dataId.json", null, query());
+          }
+    })});
+    </code>
+    </pre>
+    <h3 class="fragment">No Spring or CDI required</h3>
+</section>
+
+<section>
+    <p>An AngularJS controller in Java</p>
+    <pre>
+    <code class="java">
+module.controller("GridCtrl", new Object[]
+        {"RestService", "$scope", i2f(new FunctionCallWithRestServiceAndScope() {
+    @Override
+    public void function(RestService restService, GridScope gridScope) {
+
+        gridScope.myData(restService.query());
+        gridScope.gridOptions(gridOptions().data("myData").multiSelect(false));
+    }
 })});
     </code>
     </pre>
+</section>
+<section>
+    <p>Not a lot more verbose than JavaScript</p>
+    <h2 class="fragment">Lambdas in Java 8 will do better than JavaScript</h2>
 </section>
