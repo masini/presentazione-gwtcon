@@ -1,12 +1,12 @@
 <section>
-    <h2>JavaScript or Closure<br/>for your Angular controller ?</h2>
+    <h2>JavaScript or CoffeScript<br/>for your Angular controller ?</h2>
 </section>
 <section>
     <h2>Java !!!</h2>
 </section>
 
 <section>
-    <p>Modify "app/index.html", remove the ng-app to avoid bootstrapping before GWT</p>
+    <p>Modify <code>app/index.html</code>, remove <code>ng-app</code> to avoid bootstrapping before GWT</p>
     <pre>
     <code>
         &lt;body ng-app="yoApp"&gt;
@@ -19,15 +19,14 @@
         ...
     </code>
     </pre>
-    <p>and remove "app/scripts/app.js"</p>
+    <p>and remove <code>app/scripts/app.js</code></p>
     <h3 class="fragment">You don't need JavaScript, anymore</h3>
 </section>
 
 <section>
     <p>Bootstrapping in Java</p>
     <pre>
-    <code class="java">
-        public class GWTCon implements EntryPoint {
+    <code class="java">        public class GWTCon implements EntryPoint {
 
           private native Angular angular() /*-{
               return $wnd.angular;

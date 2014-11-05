@@ -20,6 +20,7 @@
 <code class="bash">
         mvn install
         mvn gwt:run
+
 </code>
     </pre>
 
@@ -29,7 +30,7 @@
 
 </section>
 <section>
-    <p>Ok, now deletes everything</p>
+    <p>Ok, now delete everything</p>
 
     <h2 class="fragment">It's not Modern !!</h2>
 </section>
@@ -48,7 +49,7 @@
     </pre>
 </section>
 <section>
-    <p>Modify the generated Gruntfile.js this way:</p>
+    <p>Modify the generated <code>Gruntfile.js</code> this way:</p>
     <pre>
     <code class="coffescript">
         // Configurable paths for the application
@@ -82,7 +83,7 @@
     </pre>
 </section>
 <section>
-    <p>Check that it works just launching the interal web server</p>
+    <p>Check that it works just launching the internal web server</p>
     <pre>
     <code>
         grunt serve --force
@@ -92,7 +93,7 @@
     <img width="320" height="299" src="images/grunt_serve.png" alt="grunt serve">
 </section>
 <section>
-    <p>Create a WEB-INF/web.xml in yo/app</p>
+    <p>Create a <code>WEB-INF/web.xml</code> in yo/app</p>
     <pre>
     <code language="xml"><web-app xmlns="http://java.sun.com/xml/ns/javaee"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -119,7 +120,7 @@
     <p class="fragment">This will disable caching during development</p>
 </section>
 <section>
-    <p>Configure the maven-gwt-plugin to work directly from the webapp folder...</p>
+    <p>Configure the <code>gwt-maven-plugin</code> to work directly from the webapp folder...</p>
     <pre>
     <code class="xml">
         <properties>
@@ -131,8 +132,6 @@
         <configuration>
             <runTarget>index.html</runTarget>
             <hostedWebapp>${webappDirectory}</hostedWebapp>
-            <i18nMessagesBundle>net.lucamasini.gwtday.client.Messages</i18nMessagesBundle>
-            <gen>src/main/gen</gen>
             <jsInteropMode>JS</jsInteropMode>
             <modules>
                 <module>net.lucamasini.gwtcon.GWTCon</module>
@@ -147,7 +146,6 @@
         <pre class="fragment">
 <code class="bash">
     mvn gwt:run
-
 
 </code>
     </pre>

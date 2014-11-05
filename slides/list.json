@@ -25,8 +25,8 @@
     {
         "filename": "but-what-about-gwt-until-yesterday.html",
         "attr": {
-            "data-transition": "zoom",
-            "data-background-transition": "slide",
+            "data-transition": "slide",
+            "data-background-transition": "zoom",
             "data-background": "images/bambino_in_prigione.jpg"
         }
     },
@@ -41,8 +41,8 @@
     {
         "filename": "starting-from-scratch.html",
         "attr": {
-            "data-transition": "zoom",
-            "data-background-transition": "slide",
+            "data-transition": "slide",
+            "data-background-transition": "zoom",
             "data-background": "images/perspective1.jpg"
         }
     },
@@ -57,18 +57,24 @@
     {
         "filename": "modern-ide-for-modern-developers.html",
         "attr": {
-            "data-transition": "zoom",
+            "data-transition": "slide",
             "data-background-color": "#5d71b8",
-            "data-background-transition": "slide"
+            "data-background-transition": "zoom"
         }
     },
     {
         "filename": "being-maven-free-you-from-every-birdcage.html",
         "attr": {
-            "data-transition": "zoom",
-            "data-background-transition": "slide",
+            "data-transition": "slide",
+            "data-background-transition": "zoom",
             "data-background": "images/bower-logo.png"
         }
     },
-    "riferimenti.html"
+    {
+        "filename": "riferimenti.html",
+        "attr": {
+            "data-background-color": "rgb(237,82,63)",
+            "data-transition": "zoom"
+        }
+    }
 ]

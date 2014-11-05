@@ -11,6 +11,8 @@ module.exports = (grunt) ->
                 files: [
                     'index.html'
                     'slides/{,*/}*.{md,html}'
+                    'css/*.css'
+                    'images/*.*'
                     'js/*.js'
                 ]
 

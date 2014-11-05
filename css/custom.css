@@ -3,6 +3,7 @@
     border-radius: 4px;
     padding: 10px;
     margin-right: 10px;
+    opacity: 0.8;
     /*display: inline-block;*/
 }
 
@@ -11,6 +12,7 @@
     border-radius: 4px;
     padding: 10px;
     margin-right: 10px;
+    opacity: 0.8;
     /*display: inline-block;*/
 }
 
@@ -23,4 +25,13 @@
 }
 .reveal .twokeyfactorscolor {
     color: #1b91ff;
+}
+.reveal .opaque {
+    background: #112299;
+    opacity: 0.8;
+}
+
+.reveal .opaque-grey {
+    background: #3F3F3F;
+    opacity: 0.8;
 }
